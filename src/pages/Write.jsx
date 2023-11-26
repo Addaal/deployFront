@@ -20,7 +20,7 @@ const Write = () => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/api/posts/upload", formData);
+      const res = await axios.post("https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/api/upload", formData, { withCredentials: "true" });
       return res.data;
     } catch (err) {
       console.log(err);
@@ -38,14 +38,14 @@ const Write = () => {
           desc: value,
           category,
           img: file ? imgUrl : "",
-        })
+        }, { withCredentials: "true" })
         : await axios.post(`https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/api/posts/`, {
           title,
           desc: value,
           category,
           img: file ? imgUrl : "",
           date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
-        });
+        }, { withCredentials: "true" });
       navigate("/")
     } catch (err) {
       console.log(err);
