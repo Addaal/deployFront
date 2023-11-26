@@ -7,14 +7,17 @@ const Home = () => {
   const [posts, setPosts] = useState([])
 
   const category = useLocation().search
-  console.log(useLocation())
+  //console.log(useLocation())
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get(`/posts${category}`);
+        console.log("aqui")
+        console.log(res)
         setPosts(res.data);
       } catch (err) {
+        console.log("este?")
         console.log(err);
       }
     }
