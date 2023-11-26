@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts${category}`);
+        const res = await axios.get(`https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/api/posts${category}`);
         console.log("aqui")
         console.log(res)
         setPosts(res.data);
