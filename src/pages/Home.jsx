@@ -21,7 +21,7 @@ const Home = () => {
     fetchData()
   }, [category])
 
-  console.log("here")
+  console.log("here2")
   console.log(posts)
 
   const getText = (html) => {
