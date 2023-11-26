@@ -8,12 +8,12 @@ export const AuthContextProvider = ({children}) =>{
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user")) || "");
 
     const login = async(inputs) =>{
-        const res = await axios.post("/auth/login", inputs)
+        const res = await axios.post("https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/auth/login", inputs)
         setCurrentUser(res.data)
     }
 
     const logout = async(inputs) =>{
-        const res = await axios.post("/auth/logout")
+        const res = await axios.post("https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/auth/logout")
         setCurrentUser("");
     }
 

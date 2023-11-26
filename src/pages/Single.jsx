@@ -19,7 +19,7 @@ const Single = () => {
   useEffect(()=>{
     const fetchData = async ()=>{
       try{
-        const res = await axios.get(`/posts/${postId}`);
+        const res = await axios.get(`https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/posts/${postId}`);
         setPost(res.data);
       }catch(err){
         console.log(err);
@@ -32,7 +32,7 @@ const Single = () => {
 
   const handleDelete = async ()=>{
     try{
-      const res = await axios.delete(`/posts/${postId}`);
+      const res = await axios.delete(`https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/posts/${postId}`);
       navigate("/")
     }catch(err){
       console.log(err);

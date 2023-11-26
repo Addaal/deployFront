@@ -20,7 +20,7 @@ setInput(prev=>({...prev, [e.target.name]: e.target.value}));
     e.preventDefault();  //prevents refreshing the page
     try{
       
-      const res = await axios.post("/auth/register", input)
+      const res = await axios.post("https://app-blog-hopeitowkrs-fde410f2c677.herokuapp.com/auth/register", input)
       console.log(res)
       navigate("/login")
 
